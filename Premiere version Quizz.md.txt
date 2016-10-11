@@ -1,0 +1,4 @@
+Premiere Version du programme:
+- Interraction avec l'utilisateur	
+- Stokage des réponses
+- Plusieurs questions
