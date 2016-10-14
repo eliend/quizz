@@ -1,0 +1,2 @@
+question 1;Sais-tu d'ou vient le nom du langage de programmation Python ?;1.Du serpent - 2.D'un groupe de musique - 3.D'une ville - 4.D'une serie televise;4
+question 2;Question 2: Quelle formule est couramment utilisee lors de la creation de son premier programme?;1. Bonjour a tous - 2. Hello Word? - 3. Hello World!;3
