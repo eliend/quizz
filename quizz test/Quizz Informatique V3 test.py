@@ -15,21 +15,6 @@ import os.path
 from datetime import datetime
 t = datetime.now()
 
-source = open("source.txt", "r")
-
-for line in source:
-  if not line:
-     break
-  else:
-     tableau_question = line.split(';')
-     for entry, index in enumerate(tableau_question):
-         print(entry)
-         print(index)
-     print(tableau_question[0])
-     print(tableau_question[1])
-
-
-source.close()
 
 #Les variables "v" et "d" sont là pour une futur version du quizz, ou le programme pourra calcuer les réponses de l'utilisateurs,
 #et déduire sa victoire ou sa défaite, en fonction de son nombres de bonnes/mauvaises réponses.
@@ -68,48 +53,40 @@ if ask >= y:
 else:
    print('Tu peux fermer le programme. Bonne journée!')
 
-#import time
-#time.sleep(3)
-
-answer1 = input('Ta reponse:')
-
-if answer1<=3:
-  print("non!")
-  d = d + 1
-  fichier = open(".result.txt", "a")
-  fichier.write(str(t) + 'Q1: Mauvaise réponse; ')
-  50
-  fichier.close()
-
-else:
-   print ("bien joue!")
-   v = v + 1
-   fichier = open(name + ".result.txt", "a")
-   fichier.write(str(t) + ' Q1: Bonne reponse;')
-   50
-   fichier.close()
-
 import time
 time.sleep(3)
 
-answer2=input('Ta reponse:')
+source = open("source.txt", "r")
 
-if answer2<=2<3:
-   print("non!")
-   d = d + 1
-   fichier = open(name + ".result.txt", "a")
-   fichier.write(" Q2: Mauvaise réponse;")
-   50
-   fichier.close()
+for line in source:
+  if not line:
+     break
+  else:
+     tableau_question = line.split(';')
+     print(tableau_question[0])
+     print(tableau_question[1])
+     print(tableau_question[2])
+     answer1 = input('Ta reponse:')
 
-else:
-   print("bien joue!")
-   v = v + 1
-   fichier = open(name + ".result.txt", "a")
-   fichier.write(" Q2: Bonne réponse;")
-   50
-   fichier.close()
-time.sleep(2)
+     if answer1<=3:
+       print("non!")
+       d = d + 1
+       fichier = open(".result.txt", "a")
+       fichier.write(str(t) + 'Q1: Mauvaise réponse; ')
+       50
+       fichier.close()
+
+     else:
+        print ("bien joue!")
+        v = v + 1
+        fichier = open(name + ".result.txt", "a")
+        fichier.write(str(t) + ' Q1: Bonne reponse;')
+        50
+        fichier.close()
+
+
+source.close()
+
 
 print("Merci d'avoir joue, je vais calculer tes réponses, afin de t'indiquer ton score. Tu peux egalement retrouver toutes tes reponses, dans un fichier stoker dans le dossier du jeu...")
 
