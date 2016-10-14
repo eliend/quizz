@@ -1,7 +1,7 @@
 # Reste à faire sur le projet Quizz Informatique
 
-- [ ] Ecrire les résultats de chaque partie dans un fichier nommé <nom_joueur>.res.txt (1)
-- [ ] Lire les question depuis un fichier source (2)
+- [x] Ecrire les résultats de chaque partie dans un fichier nommé <nom_joueur>.res.txt (1)
+- [x] Lire les question depuis un fichier source (2)
 - [ ] Afficher un résumé des résultats du joueur en fin de partie (3)
 
 # Spécifications

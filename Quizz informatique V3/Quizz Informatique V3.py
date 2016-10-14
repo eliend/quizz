@@ -15,7 +15,8 @@ import os.path
 from datetime import datetime
 t = datetime.now()
 
-#Les variables "v" et "d" sont là pour une futur version du quizz, ou le pgrogramme pourra calcuer les réponses de l'utilisateurs,
+
+#Les variables "v" et "d" sont là pour une futur version du quizz, ou le programme pourra calcuer les réponses de l'utilisateurs,
 #et déduire sa victoire ou sa défaite, en fonction de son nombres de bonnes/mauvaises réponses.
 
 print(t)
@@ -35,30 +36,7 @@ connexion = open(filename, "w")
 connexion.write(str(nb_cnx))
 connexion.close()
 
-
-
 fichier = open(name + ".result.txt", "a")
-
-source = open("source1.txt", "a")
-source.write("""1.Sais-tu d'ou vient le nom du langage de programmation Python ?
-
-1.Du serpent
-2.D'un groupe de musique
-3.D'une ville
-4.D'une serie televisee
-""")
-50
-fichier.close()
-
-source2 = open("source2.txt", "a")
-source2.write("""Question 2: Quelle formule est courrament utilisee lors de la creation de son premier programme?
-
-1. Bonjour a tous
-2. Hello Word?
-3. Hello World! """)
-50
-fichier.close()
-
 
 ask = raw_input('Tu te nommes bien ' + name + ' ? ')
 
@@ -78,9 +56,18 @@ else:
 import time
 time.sleep(3)
 
-source = open("source1.txt", "r")
-contenu = source.read()
-print(contenu)
+source = open("source.txt", "r")
+
+for line in source:
+  if not line:
+     break
+  else:
+     tableau_question = line.split(';')
+     print(tableau_question[0])
+     print(tableau_question[1])
+     print(tableau_question[2])
+
+
 source.close()
 
 answer1 = input('Ta reponse:')
@@ -104,11 +91,6 @@ else:
 import time
 time.sleep(3)
 
-source2 = open("source2.txt", "r")
-contenu = source2.read()
-print(contenu)
-source2.close()
-
 answer2=input('Ta reponse:')
 
 if answer2<=2<3:
@@ -126,8 +108,6 @@ else:
    fichier.write(" Q2: Bonne réponse;")
    50
    fichier.close()
-
-#   import time
 time.sleep(2)
 
 print("Merci d'avoir joue, je vais calculer tes réponses, afin de t'indiquer ton score. Tu peux egalement retrouver toutes tes reponses, dans un fichier stoker dans le dossier du jeu...")
